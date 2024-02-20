@@ -1,3 +1,65 @@
-[gd_scene format=3 uid="uid://u62fmfkngxdh"]
+[gd_scene load_steps=8 format=3 uid="uid://u62fmfkngxdh"]
+
+[ext_resource type="PackedScene" uid="uid://2crq45vxuscf" path="res://player.tscn" id="1_qdkcs"]
+[ext_resource type="PackedScene" uid="uid://b124j0fytkle3" path="res://brick.tscn" id="2_amrbm"]
+[ext_resource type="PackedScene" uid="uid://dbrfbs08ek02s" path="res://ball.tscn" id="3_skkg6"]
+[ext_resource type="Texture2D" uid="uid://43cc7motih3d" path="res://assets/play_area.png" id="4_61t1x"]
+[ext_resource type="Texture2D" uid="uid://dydofa6ny7taq" path="res://assets/score_area.png" id="5_qo71s"]
+[ext_resource type="Texture2D" uid="uid://hqetja2lp744" path="res://assets/background.png" id="6_meamg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntvf1"]
+size = Vector2(112, 8)
 
 [node name="main" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(80, 72)
+texture = ExtResource("6_meamg")
+region_rect = Rect2(0, 0, 160, 144)
+
+[node name="player" parent="." instance=ExtResource("1_qdkcs")]
+position = Vector2(57, 134)
+
+[node name="brick" parent="." instance=ExtResource("2_amrbm")]
+position = Vector2(10, 8)
+
+[node name="ball" parent="." instance=ExtResource("3_skkg6")]
+position = Vector2(57, 118)
+
+[node name="play_area" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="borders_sprite" type="NinePatchRect" parent="play_area"]
+offset_right = 116.0
+offset_bottom = 144.0
+texture = ExtResource("4_61t1x")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_lock_ = true
+
+[node name="player_goal" type="Area2D" parent="play_area"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="play_area/player_goal"]
+position = Vector2(58, 144)
+shape = SubResource("RectangleShape2D_ntvf1")
+
+[node name="borders_static_body" type="StaticBody2D" parent="play_area"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="play_area/borders_static_body"]
+polygon = PackedVector2Array(0, 0, 116, 0, 116, 144, 114, 144, 114, 2, 2, 2, 2, 144, 0, 144)
+
+[node name="score_area" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="borders_sprite" type="NinePatchRect" parent="score_area"]
+offset_left = 116.0
+offset_right = 160.0
+offset_bottom = 144.0
+texture = ExtResource("5_qo71s")
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_lock_ = true
