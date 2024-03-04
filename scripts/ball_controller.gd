@@ -49,6 +49,7 @@ func _physics_process(_delta):
 				if is_destroyed:
 					emit_signal("brick_destroy")
 				else:
+					print("Brick hit!")
 					emit_signal("brick_hit")
 		
 			# Get collision with horizontal collider
