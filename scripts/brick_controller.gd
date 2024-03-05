@@ -3,7 +3,9 @@ extends StaticBody2D
 
 # brick ammount of hits before removing it
 var hits = 1
-@onready var hits_label = $Label
+@onready var texture_brick_1 = preload("res://assets/graphics/brick_1.png")
+@onready var texture_brick_2 = preload("res://assets/graphics/brick_2.png")
+@onready var texture_brick_3 = preload("res://assets/graphics/brick_3.png")
 
 # function that sets the ammount of hits before removing it
 func set_hits(value):
@@ -21,4 +23,8 @@ func take_damage():
 	return false 		# return the brick is still going
 
 func _process(_delta):
-	hits_label.text = str(hits)
+	# Check the remaining hits and match the brick texture to it
+	match hits:
+		3:	$Sprite2D.set_texture(texture_brick_3)
+		2:	$Sprite2D.set_texture(texture_brick_2)
+		1:	$Sprite2D.set_texture(texture_brick_1)

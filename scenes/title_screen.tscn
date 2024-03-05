@@ -1,0 +1,471 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctpbebf6lvlk3"]
+
+[ext_resource type="Script" path="res://scripts/title_screen_controller.gd" id="1_ugv2l"]
+[ext_resource type="Texture2D" uid="uid://hqetja2lp744" path="res://assets/graphics/background.png" id="2_ubytq"]
+[ext_resource type="Texture2D" uid="uid://6m2k232s2vic" path="res://assets/graphics/brick.png" id="3_l4mu8"]
+[ext_resource type="Theme" uid="uid://2mowwfayxtcn" path="res://assets/fonts/break-out_theme.tres" id="4_jccyx"]
+[ext_resource type="FontFile" uid="uid://caica6dyw5tia" path="res://assets/fonts/m3x6.ttf" id="5_yrx7v"]
+
+[node name="title_screen" type="Node2D"]
+position = Vector2(7, 11)
+script = ExtResource("1_ugv2l")
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+position = Vector2(73, 61)
+texture = ExtResource("2_ubytq")
+
+[node name="title" type="Node2D" parent="."]
+
+[node name="brick" type="Sprite2D" parent="title"]
+position = Vector2(15, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick2" type="Sprite2D" parent="title"]
+position = Vector2(15, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick11" type="Sprite2D" parent="title"]
+position = Vector2(15, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick3" type="Sprite2D" parent="title"]
+position = Vector2(15, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick4" type="Sprite2D" parent="title"]
+position = Vector2(15, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick5" type="Sprite2D" parent="title"]
+position = Vector2(23, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick6" type="Sprite2D" parent="title"]
+position = Vector2(27, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick12" type="Sprite2D" parent="title"]
+position = Vector2(27, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick7" type="Sprite2D" parent="title"]
+position = Vector2(23, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick13" type="Sprite2D" parent="title"]
+position = Vector2(15, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick70" type="Sprite2D" parent="title"]
+position = Vector2(19, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick82" type="Sprite2D" parent="title"]
+position = Vector2(43, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick86" type="Sprite2D" parent="title"]
+position = Vector2(43, 45)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick87" type="Sprite2D" parent="title"]
+position = Vector2(43, 49)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick88" type="Sprite2D" parent="title"]
+position = Vector2(43, 53)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick89" type="Sprite2D" parent="title"]
+position = Vector2(43, 57)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick90" type="Sprite2D" parent="title"]
+position = Vector2(43, 61)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick91" type="Sprite2D" parent="title"]
+position = Vector2(47, 65)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick98" type="Sprite2D" parent="title"]
+position = Vector2(71, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick105" type="Sprite2D" parent="title"]
+position = Vector2(79, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick106" type="Sprite2D" parent="title"]
+position = Vector2(87, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick99" type="Sprite2D" parent="title"]
+position = Vector2(79, 45)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick100" type="Sprite2D" parent="title"]
+position = Vector2(79, 49)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick101" type="Sprite2D" parent="title"]
+position = Vector2(79, 53)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick102" type="Sprite2D" parent="title"]
+position = Vector2(79, 57)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick103" type="Sprite2D" parent="title"]
+position = Vector2(79, 61)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick104" type="Sprite2D" parent="title"]
+position = Vector2(79, 65)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick71" type="Sprite2D" parent="title"]
+position = Vector2(15, 45)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick72" type="Sprite2D" parent="title"]
+position = Vector2(15, 49)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick73" type="Sprite2D" parent="title"]
+position = Vector2(15, 53)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick74" type="Sprite2D" parent="title"]
+position = Vector2(15, 57)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick83" type="Sprite2D" parent="title"]
+position = Vector2(15, 61)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick84" type="Sprite2D" parent="title"]
+position = Vector2(19, 65)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick85" type="Sprite2D" parent="title"]
+position = Vector2(55, 65)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick92" type="Sprite2D" parent="title"]
+position = Vector2(59, 61)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick93" type="Sprite2D" parent="title"]
+position = Vector2(59, 57)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick94" type="Sprite2D" parent="title"]
+position = Vector2(59, 53)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick95" type="Sprite2D" parent="title"]
+position = Vector2(59, 49)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick96" type="Sprite2D" parent="title"]
+position = Vector2(59, 45)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick97" type="Sprite2D" parent="title"]
+position = Vector2(59, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick14" type="Sprite2D" parent="title"]
+position = Vector2(23, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick8" type="Sprite2D" parent="title"]
+position = Vector2(27, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick9" type="Sprite2D" parent="title"]
+position = Vector2(27, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick10" type="Sprite2D" parent="title"]
+position = Vector2(15, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick75" type="Sprite2D" parent="title"]
+position = Vector2(27, 41)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick76" type="Sprite2D" parent="title"]
+position = Vector2(31, 45)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick77" type="Sprite2D" parent="title"]
+position = Vector2(31, 49)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick78" type="Sprite2D" parent="title"]
+position = Vector2(31, 53)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick79" type="Sprite2D" parent="title"]
+position = Vector2(31, 57)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick80" type="Sprite2D" parent="title"]
+position = Vector2(27, 65)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick81" type="Sprite2D" parent="title"]
+position = Vector2(31, 61)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick15" type="Sprite2D" parent="title"]
+position = Vector2(39, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick22" type="Sprite2D" parent="title"]
+position = Vector2(47, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick23" type="Sprite2D" parent="title"]
+position = Vector2(51, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick24" type="Sprite2D" parent="title"]
+position = Vector2(51, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick25" type="Sprite2D" parent="title"]
+position = Vector2(47, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick26" type="Sprite2D" parent="title"]
+position = Vector2(51, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick27" type="Sprite2D" parent="title"]
+position = Vector2(51, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick28" type="Sprite2D" parent="title"]
+position = Vector2(51, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick16" type="Sprite2D" parent="title"]
+position = Vector2(39, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick17" type="Sprite2D" parent="title"]
+position = Vector2(39, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick18" type="Sprite2D" parent="title"]
+position = Vector2(39, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick19" type="Sprite2D" parent="title"]
+position = Vector2(39, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick20" type="Sprite2D" parent="title"]
+position = Vector2(39, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick21" type="Sprite2D" parent="title"]
+position = Vector2(39, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick29" type="Sprite2D" parent="title"]
+position = Vector2(63, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick36" type="Sprite2D" parent="title"]
+position = Vector2(71, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick37" type="Sprite2D" parent="title"]
+position = Vector2(71, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick68" type="Sprite2D" parent="title"]
+position = Vector2(75, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick69" type="Sprite2D" parent="title"]
+position = Vector2(75, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick38" type="Sprite2D" parent="title"]
+position = Vector2(71, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick30" type="Sprite2D" parent="title"]
+position = Vector2(63, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick31" type="Sprite2D" parent="title"]
+position = Vector2(63, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick32" type="Sprite2D" parent="title"]
+position = Vector2(63, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick33" type="Sprite2D" parent="title"]
+position = Vector2(63, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick34" type="Sprite2D" parent="title"]
+position = Vector2(63, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick35" type="Sprite2D" parent="title"]
+position = Vector2(63, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick39" type="Sprite2D" parent="title"]
+position = Vector2(87, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick40" type="Sprite2D" parent="title"]
+position = Vector2(95, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick41" type="Sprite2D" parent="title"]
+position = Vector2(95, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick42" type="Sprite2D" parent="title"]
+position = Vector2(101, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick49" type="Sprite2D" parent="title"]
+position = Vector2(103, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick50" type="Sprite2D" parent="title"]
+position = Vector2(103, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick51" type="Sprite2D" parent="title"]
+position = Vector2(103, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick52" type="Sprite2D" parent="title"]
+position = Vector2(103, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick53" type="Sprite2D" parent="title"]
+position = Vector2(103, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick43" type="Sprite2D" parent="title"]
+position = Vector2(87, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick44" type="Sprite2D" parent="title"]
+position = Vector2(87, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick45" type="Sprite2D" parent="title"]
+position = Vector2(87, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick46" type="Sprite2D" parent="title"]
+position = Vector2(87, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick47" type="Sprite2D" parent="title"]
+position = Vector2(87, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick48" type="Sprite2D" parent="title"]
+position = Vector2(87, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick54" type="Sprite2D" parent="title"]
+position = Vector2(115, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick55" type="Sprite2D" parent="title"]
+position = Vector2(115, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick56" type="Sprite2D" parent="title"]
+position = Vector2(115, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick57" type="Sprite2D" parent="title"]
+position = Vector2(115, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick61" type="Sprite2D" parent="title"]
+position = Vector2(123, 21)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick62" type="Sprite2D" parent="title"]
+position = Vector2(127, 17)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick63" type="Sprite2D" parent="title"]
+position = Vector2(128, 13)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick64" type="Sprite2D" parent="title"]
+position = Vector2(130, 9)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick65" type="Sprite2D" parent="title"]
+position = Vector2(127, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick66" type="Sprite2D" parent="title"]
+position = Vector2(129, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick67" type="Sprite2D" parent="title"]
+position = Vector2(131, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick58" type="Sprite2D" parent="title"]
+position = Vector2(115, 25)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick59" type="Sprite2D" parent="title"]
+position = Vector2(115, 33)
+texture = ExtResource("3_l4mu8")
+
+[node name="brick60" type="Sprite2D" parent="title"]
+position = Vector2(115, 29)
+texture = ExtResource("3_l4mu8")
+
+[node name="gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="option_start" type="Label" parent="gui"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 93.0
+offset_right = 93.0
+offset_bottom = 106.0
+theme = ExtResource("4_jccyx")
+text = "> START"
+
+[node name="credits" type="Label" parent="gui"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 40.0
+offset_right = 135.0
+offset_bottom = 69.0
+theme = ExtResource("4_jccyx")
+theme_override_fonts/font = ExtResource("5_yrx7v")
+theme_override_font_sizes/font_size = 16
+text = "2024
+Matias H."
+horizontal_alignment = 2

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://2mowwfayxtcn"]
+
+[ext_resource type="FontFile" uid="uid://c1ycxj3ajeuma" path="res://assets/fonts/m5x7.ttf" id="1_7ysmo"]
+
+[resource]
+Label/fonts/font = ExtResource("1_7ysmo")

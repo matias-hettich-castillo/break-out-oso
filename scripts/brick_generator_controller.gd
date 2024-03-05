@@ -1,9 +1,9 @@
 extends Node2D
 
-var brick = preload("res://brick.tscn")
+var brick = preload("res://scenes/brick.tscn")
 
 func _load(level):
-	var file = FileAccess.open("res://level" + str(level) + ".cfg", FileAccess.READ)
+	var file = FileAccess.open("res://levels/level" + str(level) + ".cfg", FileAccess.READ)
 	if file != null:
 		var content = file.get_as_text()
 		return content

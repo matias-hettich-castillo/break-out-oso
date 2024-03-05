@@ -24,21 +24,32 @@ func _physics_process(_delta):
 			# Determine the bounce direction
 			var direction = 1 if difference > 0 else -1
 			
+			# Paddle bounce region limits
+			var center_right = 1.3
+			var far_right = 6
+			var center_left = -center_right
+			var far_left = -far_right
+			
+			# Paddle angles
+			var small_angle = 0.1
+			var medium_angle = 0.5
+			var large_angle = 1.5
+			
 			# Set a bit of bounce angle in the center of the paddle
-			if difference >= -1 and difference <= 1:
-				velocity = Vector2(0.1, -1) * Vector2(direction, 1)
+			if difference >= center_left and difference <= center_right:
+				velocity = Vector2(small_angle, -1) * Vector2(direction, 1)
 				velocity.normalized()
 				velocity *= SPEED
 				
 			# Set some bounce angle in between the center and the sides
-			elif (difference >= -6 and difference < -1) or (difference > 1 and difference <= 6):
-				velocity = Vector2(0.75, -1) * Vector2(direction, 1)
+			elif (difference >= far_left and difference < center_left) or (difference > center_right and difference <= far_right):
+				velocity = Vector2(medium_angle, -1) * Vector2(direction, 1)
 				velocity.normalized()
 				velocity *= SPEED
 				
 			# Set a lot of bounce angle on the sides of the paddle
-			elif difference < -6 or difference > 6:
-				velocity = Vector2(1.25, -1) * Vector2(direction, 1)
+			elif difference < far_left or difference > far_right:
+				velocity = Vector2(large_angle, -1) * Vector2(direction, 1)
 				velocity.normalized()
 				velocity *= SPEED
 				
