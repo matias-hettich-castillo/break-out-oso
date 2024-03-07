@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://u62fmfkngxdh"]
+[gd_scene load_steps=11 format=3 uid="uid://u62fmfkngxdh"]
 
 [ext_resource type="Script" path="res://scripts/main_controller.gd" id="1_pcg47"]
 [ext_resource type="Texture2D" uid="uid://hqetja2lp744" path="res://assets/graphics/background.png" id="2_yl32h"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scripts/brick_generator_controller.gd" id="5_xcw18"]
 [ext_resource type="PackedScene" uid="uid://2crq45vxuscf" path="res://scenes/player.tscn" id="6_ew2t8"]
 [ext_resource type="PackedScene" uid="uid://dbrfbs08ek02s" path="res://scenes/ball.tscn" id="7_kp66m"]
+[ext_resource type="Theme" uid="uid://2mowwfayxtcn" path="res://assets/fonts/break-out_theme.tres" id="8_8nic6"]
+[ext_resource type="Script" path="res://scenes/game_data_controller.gd" id="9_gny2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntvf1"]
 size = Vector2(112, 8)
@@ -70,6 +72,36 @@ position = Vector2(57, 126)
 [node name="ball" parent="." instance=ExtResource("7_kp66m")]
 position = Vector2(57, 122)
 
+[node name="hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="game_data" type="Label" parent="hud"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 2.0
+offset_right = 158.0
+offset_bottom = 142.0
+theme = ExtResource("8_8nic6")
+text = "Level
+1
+
+Points
+0
+
+Lives
+3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_gny2x")
+
+[connection signal="game_over" from="." to="hud/game_data" method="_on_main_game_over"]
+[connection signal="update_lives" from="." to="hud/game_data" method="_on_main_update_lives"]
+[connection signal="update_score" from="." to="hud/game_data" method="_on_main_update_score"]
 [connection signal="body_entered" from="play_area/player_goal" to="ball" method="_on_player_goal_body_entered"]
 [connection signal="brick_destroy" from="ball" to="." method="_on_ball_brick_destroy"]
 [connection signal="brick_hit" from="ball" to="." method="_on_ball_brick_hit"]
+[connection signal="player_miss" from="ball" to="." method="_on_ball_player_miss"]
+[connection signal="get_values" from="hud/game_data" to="." method="_on_game_data_get_values"]

@@ -3,6 +3,7 @@ extends CharacterBody2D
 # signals for handling score
 signal brick_hit
 signal brick_destroy
+signal player_miss
 
 const SPEED = 60
 
@@ -78,4 +79,6 @@ func reset_ball():
 
 # Function that triggers when the ball enters the player goal area
 func _on_player_goal_body_entered(_body):
+	print("player miss!!!")
+	emit_signal("player_miss")
 	reset_ball()

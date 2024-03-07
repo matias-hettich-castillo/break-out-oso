@@ -12,3 +12,4 @@ func _input(event):
 		
 		# Start a new game
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		global.game_state = global.GAME_STATE.playing
