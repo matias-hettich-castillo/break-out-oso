@@ -82,3 +82,7 @@ func _on_player_goal_body_entered(_body):
 	print("player miss!!!")
 	emit_signal("player_miss")
 	reset_ball()
+
+
+func _on_main_go_to_next_level():
+	reset_ball()

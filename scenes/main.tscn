@@ -98,9 +98,13 @@ vertical_alignment = 1
 script = ExtResource("9_gny2x")
 
 [connection signal="game_over" from="." to="hud/game_data" method="_on_main_game_over"]
+[connection signal="go_to_next_level" from="." to="brick_generator" method="_on_main_go_to_next_level"]
+[connection signal="go_to_next_level" from="." to="ball" method="_on_main_go_to_next_level"]
+[connection signal="update_level" from="." to="hud/game_data" method="_on_main_update_level"]
 [connection signal="update_lives" from="." to="hud/game_data" method="_on_main_update_lives"]
 [connection signal="update_score" from="." to="hud/game_data" method="_on_main_update_score"]
 [connection signal="body_entered" from="play_area/player_goal" to="ball" method="_on_player_goal_body_entered"]
+[connection signal="bricks_ready" from="brick_generator" to="." method="_on_brick_generator_bricks_ready"]
 [connection signal="brick_destroy" from="ball" to="." method="_on_ball_brick_destroy"]
 [connection signal="brick_hit" from="ball" to="." method="_on_ball_brick_hit"]
 [connection signal="player_miss" from="ball" to="." method="_on_ball_player_miss"]

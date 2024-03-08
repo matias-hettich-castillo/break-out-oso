@@ -1,6 +1,9 @@
 extends Node2D
 
+signal bricks_ready
+
 var brick = preload("res://scenes/brick.tscn")
+var brick_counter = 0
 
 func _load(level):
 	var file = FileAccess.open("res://levels/level" + str(level) + ".cfg", FileAccess.READ)
@@ -12,6 +15,7 @@ func _load(level):
 		return null
 
 func _build_level(level_string):
+	brick_counter = 0
 	var start = 0	# used to extract a line of level_string from 'start' to '\n', string start at '1'
 	var dx = 0		# 'x' coordinate to position a new brick
 	var dy = 0		# 'y' coordinate to position a new brick
@@ -49,6 +53,7 @@ func _build_level(level_string):
 					
 					# Add new brick as a child
 					add_child(new_brick)
+					brick_counter += 1
 		# Add the new line position and read the next line
 		print("NEW LINE")
 		start += line.length() + 1
@@ -67,6 +72,17 @@ func _ready():
 	var level_string = _load(1)
 	if level_string != null:
 		_build_level(level_string)
+		emit_signal("bricks_ready", brick_counter)
 		print("Level ready!")
 	else:
 		print("Error loading level!")
+
+
+func _on_main_go_to_next_level(next_level):
+	var level_string = _load(next_level)
+	if level_string != null:
+		_build_level(level_string)
+		emit_signal("bricks_ready", brick_counter)
+		print("Level " + str(next_level) + " ready")
+	else:
+		print("Error loading level " + str(next_level))

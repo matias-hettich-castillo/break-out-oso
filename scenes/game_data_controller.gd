@@ -33,4 +33,6 @@ func _on_main_update_score(score):
 func _on_main_update_lives(lives):
 	gd_lives = lives
 
-
+# Updates the player level
+func _on_main_update_level(level):
+	gd_level = level

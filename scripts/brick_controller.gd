@@ -21,6 +21,7 @@ func take_damage():
 		queue_free() 	# destroy the brick
 		return true 	# return the brick was destroyed
 	return false 		# return the brick is still going
+	
 
 func _process(_delta):
 	# Check the remaining hits and match the brick texture to it
