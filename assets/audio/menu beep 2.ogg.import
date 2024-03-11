@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8ieg306h6i7f"
+path="res://.godot/imported/menu beep 2.ogg-0cf6e92b86c35beab4a0f4b474b3433f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/menu beep 2.ogg"
+dest_files=["res://.godot/imported/menu beep 2.ogg-0cf6e92b86c35beab4a0f4b474b3433f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

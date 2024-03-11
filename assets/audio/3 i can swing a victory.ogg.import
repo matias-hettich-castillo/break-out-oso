@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtid34c82a1am"
+path="res://.godot/imported/3 i can swing a victory.ogg-04172afa1c6ecf62040d544e05edf1a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/3 i can swing a victory.ogg"
+dest_files=["res://.godot/imported/3 i can swing a victory.ogg-04172afa1c6ecf62040d544e05edf1a3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

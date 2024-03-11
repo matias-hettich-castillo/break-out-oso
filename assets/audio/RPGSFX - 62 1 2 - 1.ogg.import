@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qtbjiykadjil"
+path="res://.godot/imported/RPGSFX - 62 1 2 - 1.ogg-b4a0282d7a924bb7bd49e540b6b0da9c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/RPGSFX - 62 1 2 - 1.ogg"
+dest_files=["res://.godot/imported/RPGSFX - 62 1 2 - 1.ogg-b4a0282d7a924bb7bd49e540b6b0da9c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -21,7 +21,11 @@ func take_damage():
 		queue_free() 	# destroy the brick
 		return true 	# return the brick was destroyed
 	return false 		# return the brick is still 'alive'
-	
+
+func _ready():
+	# Add the brick to a group when ready
+	add_to_group("bricks")
+
 # Constantly check the brick 'lives' and switch the active texture
 func _process(_delta):
 	# Check the remaining hits and match the brick texture to it

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5deioikjuogh"
+path="res://.godot/imported/4 i got xp_loop.ogg-a5c8b6503be9bbef66998c22dd556dee.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/4 i got xp_loop.ogg"
+dest_files=["res://.godot/imported/4 i got xp_loop.ogg-a5c8b6503be9bbef66998c22dd556dee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

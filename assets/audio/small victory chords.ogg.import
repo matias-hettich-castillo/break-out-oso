@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyttxliu0dqdp"
+path="res://.godot/imported/small victory chords.ogg-e6aaa28222375e76be84e32911d383de.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/small victory chords.ogg"
+dest_files=["res://.godot/imported/small victory chords.ogg-e6aaa28222375e76be84e32911d383de.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,5 +1,12 @@
 extends Node2D
 
+@onready var brick_hit_sfx = $audio/brick_hit_sfx
+@onready var brick_break_sfx = $audio/brick_break_sfx
+@onready var player_miss_sfx = $audio/player_miss_sfx
+@onready var game_over_sfx = $audio/game_over_sfx
+@onready var game_won_mus = $audio/game_won_mus
+@onready var level_up_sfx = $audio/level_up_sfx
+
 # Signals to handle player score, level and lives
 signal update_score
 signal update_level
@@ -22,9 +29,9 @@ func _process(_delta):
 		# Set the game_state to game_won
 		global.game_state = global.GAME_STATE.game_won
 		
-		# Remove the ball
-		if $ball:
-			$ball.queue_free()
+		# Play the game_won_mus
+		if !game_won_mus.playing:
+			game_won_mus.play()
 
 # Triggers when the ball destroys a brick
 func _on_ball_brick_destroy():
@@ -55,6 +62,12 @@ func _on_ball_brick_destroy():
 		
 		# Load next level
 		emit_signal("go_to_next_level", int(player_level))
+		
+		# Play the level_up_sfx
+		level_up_sfx.play()
+	else:
+		# Play the brick_destroy_sfx
+		brick_break_sfx.play()
 
 # Triggers when the ball hits a brick
 func _on_ball_brick_hit():
@@ -64,6 +77,9 @@ func _on_ball_brick_hit():
 	
 	# Update the hud score counter
 	emit_signal("update_score", player_score)
+	
+	# Play the brick_hit_sfx
+	brick_hit_sfx.play()
 
 # Triggers when the ball falls under the play area
 func _on_ball_player_miss():
@@ -78,12 +94,18 @@ func _on_ball_player_miss():
 			
 			# Update the hud player lives counter
 			emit_signal("update_lives", player_lives)
+			
+			# Play the player_miss_sfx
+			player_miss_sfx.play()
 		else:
 			# Set the game_state to game_over
 			global.game_state = global.GAME_STATE.game_over
 			
 			# Remove the ball
 			$ball.queue_free()
+			
+			# Play the game_over_sfx
+			game_over_sfx.play()
 
 # Saves how many bricks are at the beggining of the current level
 func _on_brick_generator_bricks_ready(bricks):

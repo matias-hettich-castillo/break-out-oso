@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bop14y0uqnfad"
+path="res://.godot/imported/low beep.ogg-c967781eef47eaf4b3c15bf93e307618.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/low beep.ogg"
+dest_files=["res://.godot/imported/low beep.ogg-c967781eef47eaf4b3c15bf93e307618.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

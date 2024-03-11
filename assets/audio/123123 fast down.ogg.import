@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0xjljlmte2qs"
+path="res://.godot/imported/123123 fast down.ogg-27586e6bd016adb32097dab47a7233ef.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/123123 fast down.ogg"
+dest_files=["res://.godot/imported/123123 fast down.ogg-27586e6bd016adb32097dab47a7233ef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

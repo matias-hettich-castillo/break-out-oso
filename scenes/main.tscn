@@ -1,14 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://u62fmfkngxdh"]
+[gd_scene load_steps=19 format=3 uid="uid://u62fmfkngxdh"]
 
 [ext_resource type="Script" path="res://scripts/main_controller.gd" id="1_pcg47"]
 [ext_resource type="Texture2D" uid="uid://hqetja2lp744" path="res://assets/graphics/background.png" id="2_yl32h"]
 [ext_resource type="Texture2D" uid="uid://43cc7motih3d" path="res://assets/graphics/play_area.png" id="3_8kkts"]
+[ext_resource type="AudioStream" uid="uid://btnlie81ld73s" path="res://assets/audio/ba-da 1.ogg" id="3_370hu"]
+[ext_resource type="AudioStream" uid="uid://qtbjiykadjil" path="res://assets/audio/RPGSFX - 62 1 2 - 1.ogg" id="4_fiu6o"]
 [ext_resource type="Texture2D" uid="uid://dydofa6ny7taq" path="res://assets/graphics/score_area.png" id="4_ug8xw"]
+[ext_resource type="AudioStream" uid="uid://bop14y0uqnfad" path="res://assets/audio/low beep.ogg" id="5_cxhia"]
 [ext_resource type="Script" path="res://scripts/brick_generator_controller.gd" id="5_xcw18"]
+[ext_resource type="AudioStream" uid="uid://cg4y083fqtx8c" path="res://assets/audio/menu beep 1.ogg" id="6_0bydw"]
 [ext_resource type="PackedScene" uid="uid://2crq45vxuscf" path="res://scenes/player.tscn" id="6_ew2t8"]
+[ext_resource type="AudioStream" uid="uid://d3qibi24ri7ru" path="res://assets/audio/falling notes - trouble.ogg" id="7_h5cin"]
 [ext_resource type="PackedScene" uid="uid://dbrfbs08ek02s" path="res://scenes/ball.tscn" id="7_kp66m"]
 [ext_resource type="Theme" uid="uid://2mowwfayxtcn" path="res://assets/fonts/break-out_theme.tres" id="8_8nic6"]
+[ext_resource type="AudioStream" uid="uid://d0xjljlmte2qs" path="res://assets/audio/123123 fast down.ogg" id="8_c5jpj"]
+[ext_resource type="AudioStream" uid="uid://5deioikjuogh" path="res://assets/audio/4 i got xp_loop.ogg" id="9_brcp1"]
 [ext_resource type="Script" path="res://scenes/game_data_controller.gd" id="9_gny2x"]
+[ext_resource type="AudioStream" uid="uid://dyttxliu0dqdp" path="res://assets/audio/small victory chords.ogg" id="10_1qua7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntvf1"]
 size = Vector2(112, 8)
@@ -25,6 +33,32 @@ position = Vector2(80, 72)
 texture = ExtResource("2_yl32h")
 region_rect = Rect2(0, 0, 160, 144)
 metadata/_edit_lock_ = true
+
+[node name="audio" type="Node2D" parent="."]
+
+[node name="brick_hit_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("3_370hu")
+
+[node name="brick_break_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("4_fiu6o")
+
+[node name="wall_bounce_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("5_cxhia")
+
+[node name="paddle_bounce_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("6_0bydw")
+
+[node name="player_miss_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("7_h5cin")
+
+[node name="game_over_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("8_c5jpj")
+
+[node name="game_won_mus" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("9_brcp1")
+
+[node name="level_up_sfx" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("10_1qua7")
 
 [node name="play_area" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

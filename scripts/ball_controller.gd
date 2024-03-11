@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var wall_bounce_sfx = $"../audio/wall_bounce_sfx"
+@onready var paddle_bounce_sfx = $"../audio/paddle_bounce_sfx"
+
 # Signals for handling score
 signal brick_hit		# Signal for when the ball hits a brick
 signal brick_destroy	# Signal for when the ball destroys a brick
@@ -26,76 +29,61 @@ func _ready():
 
 # Handle the ball movement and collisions
 func _physics_process(_delta):
-	# Move the ball until it collides with something
-	var collision = move_and_collide(velocity * _delta)
-	
-	# When the ball colides, check it
-	if collision:
-		# Obtain the collider of the collision
-		var collider = collision.get_collider()
+	if global.game_state == global.GAME_STATE.playing:
+		# Move the ball until it collides with something
+		var collision = move_and_collide(velocity * _delta)
 		
-		# Check if the ball collided with the player
-		if str(collider).contains("player"):
-			print("player hit!")
+		# When the ball colides, check it
+		if collision:
+			# Obtain the collider of the collision
+			var collider = collision.get_collider()
 			
-			# Get the player node after collision
-			var player = get_node("../player")
-			
-			# Calculate the distance from the center of the paddle
-			var difference = position.x - player.position.x
-			
-			# Determine the bounce direction
-			var direction = 1 if difference > 0 else -1
-			
-			# Paddle bounce region limits
-			var center_right = 1.3
-			var far_right = 6
-			var center_left = -center_right
-			var far_left = -far_right
-			
-			# Paddle bounce angles
-			var small_angle = 0.1
-			var medium_angle = 0.5
-			var large_angle = 1.5
-			
-			# Set a bit of bounce angle at the center of the paddle
-			if difference >= center_left and difference <= center_right:
-				velocity = Vector2(small_angle, -1) * Vector2(direction, 1)
-			
-			# Set some bounce angle in between the center and the sides
-			elif (difference >= far_left and difference < center_left) or (difference > center_right and difference <= far_right):
-				velocity = Vector2(medium_angle, -1) * Vector2(direction, 1)
-			
-			# Set a lot of bounce angle on the sides of the paddle
-			elif difference < far_left or difference > far_right:
-				velocity = Vector2(large_angle, -1) * Vector2(direction, 1)
-			
-			# Normalize the velocity vector
-			velocity.normalized()
-			
-			# Set the ball constant speed
-			velocity *= SPEED
-		
-		# In case the ball collided with the wall or a brick
-		else:
-			# Handle brick collision
-			if str(collider).contains("brick"):
-				# Do damage to the brick collided
-				var is_destroyed = collider.take_damage()
+			# Check if the ball collided with the player
+			if str(collider).contains("player"):
+				print("player hit!")
 				
-				# Check if the brick was destroyed or just hitted
-				if is_destroyed:
-					emit_signal("brick_destroy")
-				else:
-					print("Brick hit!")
-					emit_signal("brick_hit")
-		
-			# Get collision with horizontal collider
-			if collision.get_normal() in [Vector2(0, 1), Vector2(0, -1)]:
-				velocity *= Vector2(1, -1)
-			# Get collision with vertical collider
+				# Get the player node after collision
+				var player = get_node("../player")
+				
+				# Calculate the distance from the center of the paddle
+				var difference = position.x - player.position.x
+				
+				# Setting the bounce angle relative to distance from center
+				velocity = Vector2(difference/7.5, -1)
+				
+				# Normalize the velocity vector
+				velocity.normalized()
+				
+				# Set the ball constant speed
+				velocity *= SPEED
+				
+				# Play the paddle_bounce_sfx
+				paddle_bounce_sfx.play()
+			
+			# In case the ball collided with the wall or a brick
 			else:
-				velocity *= Vector2(-1, 1)
+				# Handle brick collision
+				#if str(collider).contains("brick"):
+				if collider.is_in_group("bricks"):
+					# Do damage to the brick collided
+					var is_destroyed = collider.take_damage()
+					
+					# Check if the brick was destroyed or just hitted
+					if is_destroyed:
+						emit_signal("brick_destroy")
+					else:
+						print("Brick hit!")
+						emit_signal("brick_hit")
+				else:
+					# Play the wall_bounce_sfx
+					wall_bounce_sfx.play()
+			
+				# Get collision with horizontal collider
+				if collision.get_normal() in [Vector2(0, 1), Vector2(0, -1)]:
+					velocity *= Vector2(1, -1)
+				# Get collision with vertical collider
+				else:
+					velocity *= Vector2(-1, 1)
 
 # Function that triggers when the ball enters the player goal area
 func _on_player_goal_body_entered(_body):
