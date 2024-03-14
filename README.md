@@ -1,4 +1,4 @@
-# Break-Out Test
+# Break-Out Test Minigame
 
 This project was made in Godot as a part of me learning how to mess around with the engine. This is the second project I made in this modality, the first one being a Pong clone. Hope you enjoy it.
 Controls:
@@ -16,7 +16,7 @@ You can play the game here: https://matiashettich.itch.io/break-out-minigame-tes
 ![screenshot_01](https://github.com/matias-hettich-castillo/break-out-oso/assets/7623785/ac909561-b0ff-4831-b322-30ee9812ba81)
 ![screenshot_03](https://github.com/matias-hettich-castillo/break-out-oso/assets/7623785/0e7be8b4-d99d-4cbb-99b6-29e2d371e028)
 
-Credits:
+# Credits
 
 Fonts used for this project made by https://managore.itch.io/
 
