@@ -2,7 +2,7 @@
 
 This project was made in Godot as a part of me learning how to mess around with the engine. This is the second project I made in this modality, the first one being a Pong clone. Hope you enjoy it.
 
-You can play the game here: https://matiashettich.itch.io/break-out-minigame-test
+You can play the game here: <a href="https://matiashettich.itch.io/break-out-minigame-test">Break-Out Test</a>
 
 <p align="center">
     <img src="https://github.com/matias-hettich-castillo/break-out-oso/assets/7623785/4e3f0362-8b15-4176-a23c-9ceda774d159" width="250" />
